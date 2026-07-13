@@ -1,111 +1,107 @@
-# Auditoría y mejora de SEO técnico — martinhersog.com
+# Technical SEO Audit — martinhersog.com
 
-**Cliente:** María Martín Hersog ([martinhersog.com](https://martinhersog.com))
-**Tipo de proyecto:** Auditoría y optimización de SEO técnico
-**Alcance:** WordPress + RankMath SEO + Google Search Console
+*[Leer en español](README.es.md)*
 
-## Descripción corta
+**Client:** María Martín Hersog ([martinhersog.com](https://martinhersog.com))
+**Project type:** Technical SEO audit and optimization
+**Scope:** WordPress + RankMath SEO + Google Search Console
 
-Auditoría y optimización de SEO técnico para el portfolio profesional de María Martín
-Hersog (martinhersog.com): instalación y configuración de RankMath, verificación en
-Google Search Console, corrección de estructura de encabezados, optimización de
-metadatos y accesibilidad de imágenes. Puntuación de SEO on-page mejorada de **78 a
-91/100**.
+## Short description
+
+Technical SEO audit and optimization for María Martín Hersog's professional portfolio
+(martinhersog.com): installed and configured RankMath, verified the site in Google
+Search Console, fixed heading structure issues, and optimized metadata and image
+accessibility. On-page SEO score improved from **78 to 91/100**.
 
 ---
 
-## Contexto
+## Context
 
-María Martín Hersog es diseñadora gráfica y web, con un portfolio en WordPress activo
-desde 2021 pero sin ningún trabajo de SEO técnico realizado hasta la fecha. El sitio no
-tenía plugin de SEO instalado, no estaba verificado en Google Search Console, y
-presentaba varios problemas de estructura técnica que dificultaban tanto la indexación
-como la interpretación del contenido por parte de los buscadores. Construido con
-WordPress + tema Salient + WPBakery Page Builder.
+María Martín Hersog is a graphic and web designer with a WordPress portfolio that has
+been live since 2021 but had never had any technical SEO work done. The site had no
+SEO plugin installed, was not verified in Google Search Console, and had several
+technical structure issues that made it harder for search engines to index and
+interpret the content. Built with WordPress + the Salient theme + WPBakery Page
+Builder.
 
-## Objetivo
+## Goal
 
-Establecer una base técnica de SEO sólida sobre la que poder construir, en el futuro,
-una estrategia de contenido y visibilidad — dejando el sitio correctamente configurado,
-medible y sin errores estructurales, aunque el impacto directo en tráfico de búsqueda
-dependa de trabajo posterior (contenido, enlaces externos).
+Establish a solid technical SEO foundation to build on in the future with a content
+and visibility strategy — leaving the site correctly configured, measurable, and free
+of structural errors, even though the direct impact on search traffic depends on
+follow-up work (content, external links).
 
-**Nota de acceso:** la propietaria ofreció acceso completo a la cuenta de hosting; por
-seguridad, se optó por no usar ese acceso directo y trabajar en su lugar con un usuario
-administrador propio y limitado dentro de WordPress.
+**Access note:** the site owner offered full access to the hosting account; for
+security, that direct access was not used. Instead, work was done through a separate,
+limited administrator account created within WordPress.
 
-## Trabajo realizado
+## Work done
 
-### 1. Configuración de herramientas
+### 1. Tooling setup
 
-- Instalación y configuración de **RankMath SEO** (no había ningún plugin de SEO antes).
-- Creación de una propiedad en **Google Search Console** y verificación de la
-  propiedad.
-- **Problema encontrado:** la verificación por etiqueta HTML fallaba — el código
-  publicado en el `<head>` del sitio no coincidía con el que RankMath insertaba, señal
-  de que otra fuente tenía prioridad. Se descartó como causa el plugin RankMath, la
-  caché, y otros plugins instalados (desactivándolos uno a uno). El origen exacto no
-  se localizó (probablemente un meta tag antiguo hardcodeado en el tema padre), pero no
-  bloqueó la solución.
-- **Solución aplicada:** verificación por el método alternativo **"Archivo HTML"** de
-  Search Console, que no compite con el `<head>` del sitio — funcionó a la primera.
+- Installed and configured **RankMath SEO** (no SEO plugin was present before).
+- Created a property in **Google Search Console** and verified it.
+- **Issue found:** HTML tag verification kept failing — the code published in the
+  site's `<head>` didn't match the one RankMath was inserting, a sign that another
+  source had priority. Ruled out the RankMath plugin, caching, and other installed
+  plugins as the cause (disabling them one by one). The exact origin was never
+  pinpointed (likely an old meta tag hardcoded in the parent theme), but that didn't
+  block the fix.
+- **Fix applied:** verification via Search Console's alternative **"HTML file"**
+  method, which doesn't compete for the site's `<head>` — worked on the first try.
 
-### 2. Corrección de estructura técnica
+### 2. Technical structure fixes
 
-- **H1 duplicado en la home:** el módulo de encabezado tenía 3 etiquetas `<h1>` en la
-  misma página (debía haber exactamente 1). Causa: dos títulos adicionales estaban
-  codificados manualmente como `<h1>` en el bloque de contenido en lugar de `<h2>`.
-  Corregido cambiando el nivel de encabezado de esos dos elementos.
-- **Sitemap de autores expuesto:** el sitemap nativo de WordPress incluía un
-  sub-sitemap de usuarios (`users`), que exponía innecesariamente los nombres de
-  usuario del sitio — sin valor SEO y un riesgo menor de seguridad. Resuelto
-  automáticamente al activar RankMath, que tomó el control de los sitemaps y desactivó
-  el nativo de WordPress.
-- **Imágenes sin texto alternativo (ALT):** redacción de texto ALT descriptivo para
-  más de 60 imágenes del portfolio, cubriendo tanto las señaladas por el analizador de
-  RankMath como el resto del catálogo de proyectos — mejora de accesibilidad y de SEO
-  de imágenes.
+- **Duplicate H1 on the homepage:** the heading module had 3 `<h1>` tags on the same
+  page (there should be exactly 1). Cause: two additional headings were manually
+  hardcoded as `<h1>` in the content block instead of `<h2>`. Fixed by changing the
+  heading level of those two elements.
+- **Exposed author sitemap:** WordPress's native sitemap included a `users`
+  sub-sitemap, needlessly exposing the site's usernames — no SEO value and a minor
+  security risk. Resolved automatically once RankMath was activated, as it took over
+  sitemap generation and disabled WordPress's native one.
+- **Images missing alt text:** wrote descriptive alt text for 60+ images across the
+  portfolio, covering both the ones flagged by RankMath's analyzer and the rest of the
+  project catalog — improving both accessibility and image SEO.
 
-### 3. Optimización on-page
+### 3. On-page optimization
 
-- Redacción de títulos SEO y meta descriptions para las 4 páginas principales del
-  sitio (Inicio, Sobre mí, Portfolio, Contacto).
-- Definición de palabra clave objetivo para las 4 páginas principales y las 14
-  entradas del portfolio de proyectos.
-- Ajuste de los títulos internos de página (WordPress) para alinearlos con las
-  palabras clave — con el cuidado de que, en este sitio, el menú de navegación hereda
-  automáticamente el título de página si no se ha personalizado a mano. Se fijó el
-  texto de navegación manualmente en cada caso para no romper la coherencia visual del
-  menú.
+- Wrote SEO titles and meta descriptions for the site's 4 main pages (Home, About,
+  Portfolio, Contact).
+- Defined a target keyword for the 4 main pages and the 14 individual portfolio
+  entries.
+- Adjusted internal page titles (WordPress) to align with the target keywords — with
+  care taken because, on this site, the navigation menu automatically inherits a
+  page's title as its menu label unless that field has been customized manually. The
+  menu label was set manually in each case to avoid breaking the menu's visual
+  consistency.
 
-## Resultado: evolución de la puntuación de SEO on-page (RankMath)
+## Results: on-page SEO score progression (RankMath)
 
-| Momento | Puntuación | Detalle |
+| Stage | Score | Detail |
 |---|---|---|
-| Primer informe completo | 78/100 | 21 pruebas superadas / 1 aviso / 4 fallos |
-| Tras H1, imágenes, títulos y keywords | 86/100 | 22 pruebas superadas / 1 aviso / 3 fallos |
-| Tras keywords en portfolio y ajustes finales | **91/100** | 23 pruebas superadas / 0 avisos / 3 fallos |
+| First full report | 78/100 | 21 tests passed / 1 warning / 4 failures |
+| After H1, images, titles and keywords | 86/100 | 22 tests passed / 1 warning / 3 failures |
+| After portfolio keywords and final adjustments | **91/100** | 23 tests passed / 0 warnings / 3 failures |
 
-Los fallos restantes al cierre de esta fase son de menor impacto y quedan como
-pendientes documentados: 14 entradas de portfolio donde la keyword no aparece en el
-título interno de WordPress (mismo ajuste ya aplicado a las 4 páginas principales),
-etiquetas OpenGraph incompletas, y un fallo puntual de ejecución del test de velocidad
-móvil (no del sitio en sí).
+The remaining failures at the close of this phase are lower-impact and documented as
+follow-ups: 14 portfolio entries where the keyword doesn't yet appear in the WordPress
+internal title (same fix already applied to the 4 main pages), incomplete OpenGraph
+tags, and a one-off mobile speed test execution failure (a tooling issue, not a site
+issue).
 
-## Nota metodológica
+## Methodology note
 
-Este trabajo corresponde a SEO técnico y on-page — higiene y estructura del sitio, no
-promoción o generación de tráfico. Su valor es servir de base correctamente construida
-para futuras acciones de contenido y visibilidad, que son las que determinarán el
-impacto real en el posicionamiento en buscadores para términos competitivos.
+This work covers technical and on-page SEO — site hygiene and structure, not
+promotion or traffic generation. Its value is providing a correctly built foundation
+for future content and visibility work, which is what will ultimately drive real
+search ranking impact for competitive terms.
 
-## Pendientes para una futura fase
+## Next steps for a future phase
 
-- Ampliar el contenido de las páginas principales (objetivo 600+ palabras) integrando
-  la keyword de forma natural, para subir la puntuación real más allá de ajustes de
-  metadatos.
-- Ajustar el título interno de WordPress de las 14 entradas de portfolio.
-- Completar las etiquetas OpenGraph para mejorar la vista previa al compartir en redes
-  sociales.
-- Instalar Google Analytics como segundo método de verificación de propiedad y para
-  empezar a acumular datos de tráfico.
+- Expand the main pages' content (target 600+ words) integrating the keyword
+  naturally, to raise the real score beyond metadata adjustments.
+- Adjust the WordPress internal title of the 14 portfolio entries.
+- Complete OpenGraph tags to improve link previews when sharing on social media.
+- Install Google Analytics as a second property-verification method and to start
+  collecting traffic data.
