@@ -48,7 +48,8 @@ limited administrator account created within WordPress.
   pinpointed (likely an old meta tag hardcoded in the parent theme), but that didn't
   block the fix.
 - **Fix applied:** verification via Search Console's alternative **"HTML file"**
-  method, which doesn't compete for the site's `<head>` — worked on the first try.
+  method, which doesn't depend on the site's `<head>` at all — a static file served
+  from the site root instead of a meta tag, sidestepping the conflict entirely.
 
 ### 2. Technical structure fixes
 

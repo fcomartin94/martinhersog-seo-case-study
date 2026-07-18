@@ -50,7 +50,9 @@ administrador propio y limitado dentro de WordPress.
   se localizó (probablemente un meta tag antiguo hardcodeado en el tema padre), pero no
   bloqueó la solución.
 - **Solución aplicada:** verificación por el método alternativo **"Archivo HTML"** de
-  Search Console, que no compite con el `<head>` del sitio — funcionó a la primera.
+  Search Console, que no depende en absoluto del `<head>` del sitio — un archivo
+  estático servido desde la raíz en vez de una etiqueta meta, evitando el conflicto
+  por completo.
 
 ### 2. Corrección de estructura técnica
 
